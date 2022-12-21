@@ -9,7 +9,7 @@ function PokemonCard(props) {
       async function getData() {
         const response = await fetch(props.url)
         const data = await response.json()
-        
+
         setPokemonDetails(data)
       }
 
@@ -24,8 +24,9 @@ function PokemonCard(props) {
         {props.name}
       </h4>
       {
-        pokemonDetails &&
-        <img src={pokemonDetails.sprites.front_default} alt="" />
+        pokemonDetails
+        ? <img src={pokemonDetails.sprites.front_default} alt="" />
+        : <div>Loading...</div>
       }
     </div>
   )

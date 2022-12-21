@@ -26,7 +26,7 @@ function FetchData() {
       {
         data &&
         data.results.map(
-          (pokemon, index) => <PokemonCard key={index} {...pokemon}/>
+          (pokemon, index) => <PokemonCard key={index} {...pokemon} />
         )
       }
     </div>
