@@ -18,6 +18,8 @@ function FetchData() {
 
       getData()
     },
+    // Keep to JavaScript primitive types (Number, boolean, strings)
+    // Inside this dependency array
     []
   )
 
