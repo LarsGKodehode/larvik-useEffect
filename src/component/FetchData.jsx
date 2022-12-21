@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import PokemonCard from "./PokemonCard"
 
 const API_ENDPOINT = "https://pokeapi.co/api/v2/pokemon"
 
@@ -12,7 +13,6 @@ function FetchData() {
         const response = await fetch(API_ENDPOINT)
         const data = await response.json()
         
-        console.log(data)
         setData(data)
       }
 
@@ -26,7 +26,7 @@ function FetchData() {
       {
         data &&
         data.results.map(
-          (pokemon) => <div>{pokemon.name}</div>
+          (pokemon, index) => <PokemonCard key={index} {...pokemon}/>
         )
       }
     </div>
